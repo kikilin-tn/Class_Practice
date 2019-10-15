@@ -6,22 +6,24 @@ Make another method called greet_user() that prints a personalized greeting to t
 Create several instances representing different users, and call both methods for each user.
 """
 class User():
-    def __init__(self, first_name, last_name):
-        self.first_name = first_name
-        self.last_name = last_name
+    def __init__(self, first_name, last_name, location):
+        self.first_name = first_name.title()
+        self.last_name = last_name.title()
+        self.location = location.upper()
 
     def describe_user(self):
         user_info = 'The user is ' + self.first_name  + ' ' + self.last_name
         print(user_info)
+        print('Location: ' + self.location)
 
     def greet_user(self):
-        msg = 'Hello, '+ self.first_name + ' ' + self.last_name + ' . Welcome!' + '\n'
+        msg = 'Welcome back! '+ self.first_name + ' ' + self.last_name + '.' + '\n'
         print(msg)
 
-user = User('Lin', 'Amy')
+user = User('Lin', 'Amy', 'TC')
 user.describe_user()
 user.greet_user()
 
-user = User('Yang', 'Mary')
+user = User('Yang', 'Mary', 'TP')
 user.describe_user()
 user.greet_user()
